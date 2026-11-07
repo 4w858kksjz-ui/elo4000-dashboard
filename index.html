@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0b0f14">
+<title>PROJECT ELO 4000 – Live Control Center</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="static/style.css?v=764bb7ff3e">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="logo">♞</span><div><b>PROJECT ELO 4000</b><small>Live Control Center · nur lesen</small></div></div>
+  <div class="fresh" id="fresh" title="Zeitpunkt der letzten erfolgreichen Datenaktualisierung"><span class="dot" id="fdot"></span><span id="ftext">lädt…</span></div>
+</header>
+<div id="banner" class="banner" hidden></div>
+<main id="view" aria-live="polite"><p class="muted pad">Lade Daten…</p></main>
+<nav class="tabs" aria-label="Navigation">
+  <a href="#/board/live" data-t="board"><i>♚</i><span>Brett</span></a>
+  <a href="#/arena" data-t="arena"><i>⚔</i><span>Start</span></a>
+  <a href="#/archive" data-t="archive"><i>☰</i><span>Partien</span></a>
+</nav>
+<noscript><p class="pad">Diese Seite braucht JavaScript.</p></noscript>
+<script src="static/hosted.js?v=764bb7ff3e"></script>
+<script src="static/app.js?v=764bb7ff3e"></script>
+</body>
+</html>
