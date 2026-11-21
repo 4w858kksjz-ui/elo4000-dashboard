@@ -1,0 +1,58 @@
+/* PROJECT ELO 4000 - Markensystem v1: Tokens und Basiskomponenten.
+   Idee der Marke: "Der aufsteigende Bauer". Ein Bauer im geschlossenen Kreis-Pfeil = eine Engine, die sich selbst verbessert. Navy ist die Bühne, Smaragd ist das Signal für Fortschritt und Live.
+   Regeln: Smaragd nur für Fortschritt, Live und Aktionen; Rot nur für Niederlagen; Gelb nur für Warnungen und Offline; alles andere Navy und Weißtöne. */
+
+:root{
+  /* ---- Farbe: Navy-Skala ---- */
+  --navy-950:#050A15;--navy-900:#070D1B;--navy-850:#0A1222;--navy-800:#0F1B32;--navy-700:#142443;--navy-600:#1B2F52;--navy-500:#2A4272;
+  /* ---- Farbe: Smaragd-Skala ---- */
+  --em-300:#8CF0C9;--em-400:#5CE2B0;--em-500:#35D69A;--em-600:#10B981;--em-700:#0B8F66;
+  /* ---- Farbe: Text ---- */
+  --ink-50:#F4F7FF;--ink-300:#A7B9D5;--ink-500:#7589A8;
+  /* ---- Farbe: Signale ---- */
+  --danger-500:#FF6B7A;--warn-500:#F5C04A;
+  /* ---- semantische Namen (die Seiten benutzen nur diese) ---- */
+  --bg:var(--navy-900);--bg2:var(--navy-850);--card:var(--navy-800);--card2:var(--navy-700);--card3:var(--navy-600);
+  --text:var(--ink-50);--muted:var(--ink-300);--dim:var(--ink-500);
+  --em:var(--em-500);--em2:var(--em-600);--red:var(--danger-500);--amber:var(--warn-500);
+  --line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.14);
+  --em-bg:rgba(53,214,154,.13);--em-border:rgba(53,214,154,.28);--glow:rgba(53,214,154,.45);
+  --red-bg:rgba(255,107,122,.14);--amber-bg:rgba(245,192,74,.14);
+  /* ---- Typografie: Inter zuerst, danach starke Systemschriften (nichts wird von Fremdservern geladen) ---- */
+  --font:"Inter","Geist","SF Pro Display","Segoe UI Variable Display","Segoe UI",Roboto,system-ui,sans-serif;
+  --font-mono:"JetBrains Mono","Cascadia Code","SF Mono",ui-monospace,Consolas,monospace;
+  /* Skala 1.25 (Große Terz): Caption 12, Small 14, Body 16, Lead 18, H4 20, H3 25, H2 31-52, Display 88-200 */
+  --fs-cap:12.5px;--fs-sm:14px;--fs-body:16px;--fs-lead:clamp(15px,1.6vw,18px);
+  --tracking-display:-.055em;--tracking-title:-.035em;--tracking-label:.16em;
+  /* ---- Form ---- */
+  --r-sm:12px;--r-md:16px;--r-lg:22px;--r-xl:28px;--r-pill:999px;
+  --shadow-card:0 1px 0 rgba(255,255,255,.05) inset,0 30px 60px -34px rgba(0,0,0,.8);
+  --shadow-glow:0 0 40px -10px var(--glow);
+  /* ---- Bewegung: kurz, weich, bedeutungsvoll ---- */
+  --ease:cubic-bezier(.22,1,.36,1);--dur-1:.12s;--dur-2:.2s;--dur-3:.36s;--dur-4:.8s;
+}
+
+/* ---- Basis ---- */
+.brand-body{background:var(--bg);color:var(--text);font:var(--fs-body)/1.55 var(--font);font-feature-settings:"tnum" 1,"cv11" 1;-webkit-font-smoothing:antialiased}
+.label{color:var(--em);font-weight:700;letter-spacing:var(--tracking-label);text-transform:uppercase;font-size:var(--fs-cap)}
+.display{font-weight:800;letter-spacing:var(--tracking-display);line-height:.95}
+.title{font-weight:800;letter-spacing:var(--tracking-title);line-height:1.05}
+.muted{color:var(--muted)}.dim{color:var(--dim)}
+
+/* ---- Icons: ein Satz, 24er Raster, Linie 1.75, runde Enden, currentColor ---- */
+svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* ---- Komponenten ---- */
+.card{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.012)),var(--card);border:1px solid var(--line);border-radius:var(--r-xl);padding:clamp(18px,3vw,30px);box-shadow:var(--shadow-card);transition:border-color var(--dur-2),box-shadow var(--dur-2)}
+.card.lift{border-color:var(--em-border);box-shadow:var(--shadow-card),var(--shadow-glow)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:var(--r-sm);border:1px solid var(--line2);background:rgba(255,255,255,.05);color:var(--text);font:600 14.5px var(--font);cursor:pointer;transition:border-color var(--dur-2),background var(--dur-2)}
+.btn:hover{border-color:var(--em-border)}.btn.primary{background:linear-gradient(180deg,var(--em-400),var(--em-600));color:#04271b;border-color:transparent;box-shadow:0 8px 24px -10px var(--glow)}
+.chip{display:inline-flex;align-items:center;gap:6px;border-radius:var(--r-pill);padding:4px 13px;font-size:14px;font-weight:700;background:rgba(255,255,255,.07);color:var(--muted);white-space:nowrap}
+.chip.good{background:var(--em-bg);color:var(--em)}.chip.bad{background:var(--red-bg);color:var(--red)}.chip.warn{background:var(--amber-bg);color:var(--amber)}
+.pill{display:inline-flex;align-items:center;gap:7px;border-radius:var(--r-pill);padding:5px 13px;font-weight:700;font-size:13px;background:rgba(255,255,255,.06);color:var(--muted);border:1px solid var(--line)}
+.pill.live{background:var(--em-bg);color:var(--em);border-color:var(--em-border)}.pill.live::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--em);animation:pulse 2s infinite}
+.pill.warn{background:var(--amber-bg);color:var(--amber);border-color:rgba(245,192,74,.25)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(53,214,154,.55)}70%{box-shadow:0 0 0 8px rgba(53,214,154,0)}100%{box-shadow:0 0 0 0 rgba(53,214,154,0)}}
+.kpi{padding:18px 20px;border-radius:var(--r-lg);background:rgba(255,255,255,.04);border:1px solid var(--line)}.kpi .l{color:var(--dim);font-size:var(--fs-cap);font-weight:700;letter-spacing:.12em;text-transform:uppercase}.kpi .v{font-size:clamp(30px,4vw,44px);font-weight:800;letter-spacing:-.04em;line-height:1.1}.kpi .s{color:var(--muted);font-size:var(--fs-sm)}
+:focus-visible{outline:2px solid var(--em);outline-offset:3px;border-radius:8px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

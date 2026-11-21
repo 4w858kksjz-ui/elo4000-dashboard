@@ -1,0 +1,5 @@
+Schachfiguren (pieces.js)
+Gestaltung im Stil des Lichess-Standardsatzes "cburnett" nach einem Entwurf von Colin M. L. Burnett
+(Wikimedia Commons; Lizenzen: CC BY-SA 3.0, GFDL, GPL, BSD).
+Die SVG-Pfade in pieces.js sind eine eigene Nachzeichnung auf einem 45x45-Raster; es wurde keine Datei heruntergeladen.
+Namensnennung: Colin M. L. Burnett. Weitergabe unter denselben Bedingungen (CC BY-SA 3.0).

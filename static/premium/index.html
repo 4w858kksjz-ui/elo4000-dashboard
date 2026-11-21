@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#050913">
+<title>PROJECT ELO 4000 – The pursuit of 4000</title>
+<meta name="description" content="Die Entwicklung einer selbstlernenden Schachengine, offen und ehrlich gemessen.">
+<link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="brand/brand.css">
+<link rel="stylesheet" href="base.css?v=96">
+<link rel="stylesheet" href="premium.css?v=96">
+<link rel="stylesheet" href="mobile.css?v=96" media="(max-width: 859px)">
+</head>
+<body class="brand-body">
+<a class="skip" href="#arena">Zum Inhalt</a>
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="PROJECT ELO 4000 – zum Anfang"><span class="bmark" aria-hidden="true"><svg viewBox="0 0 100 130"><circle cx="50" cy="30" r="17"/><rect x="33" y="47" width="34" height="9" rx="4.5"/><path d="M42 55C42 71 36 84 27 98h46C64 84 58 71 58 55z"/><rect x="21" y="96" width="58" height="9" rx="4.5"/><rect x="15" y="104" width="70" height="14" rx="6"/></svg></span><span class="bname"><small>PROJECT</small><b>ELO 4000</b></span></a>
+  <nav class="links" aria-label="Abschnitte"><a href="#arena">Arena</a><a href="#evolution">Evolution</a><a href="#performance">Performance</a><a href="#partien">Partien</a><a href="#road">Road to 4000</a><a href="#mission">Mission</a></nav>
+  <div class="status"><span class="pill" id="state" role="status" aria-live="polite">lädt…</span><small id="updated"></small></div>
+  <button class="menubtn" id="menubtn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+</header>
+<nav class="mnav" id="mnav" aria-label="Abschnitte" hidden>
+  <a href="#arena"><i>01</i>Live Chess Arena</a><a href="#evolution"><i>02</i>Engine Evolution</a><a href="#performance"><i>03</i>Elo Performance</a><a href="#partien"><i>04</i>Game Explorer</a><a href="#road"><i>05</i>Road to 4000</a><a href="#mission"><i>06</i>The Mission</a>
+</nav>
+
+<main id="top">
+  <section class="hero" id="hero" aria-label="Überblick">
+    <div class="hero-pawn" id="pawnwrap"><img src="hero-ref.webp?v=96" alt="Schwarzer Schachbauer aus poliertem Obsidian im Studiolicht" width="1672" height="941" fetchpriority="high"></div>
+    <div class="hero-copy">
+      <p class="eyebrow">The pursuit of 4000</p>
+      <h1 class="elo" aria-live="polite"><span class="sr">Aktuelle Elo: </span><span id="elo">–</span><span class="unit">Elo</span></h1>
+      <p class="proof" id="proof"></p>
+      <div class="cta"><a class="btn go" href="#arena">Live Arena<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg></a><a class="btn ghost" href="#evolution">Engine Evolution<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a></div>
+    </div>
+    <dl class="keyfacts" id="keyfacts"></dl>
+  </section>
+
+  <section class="sec" id="arena">
+    <div class="wrap">
+      <header class="sh"><p class="num">01</p><div><h2>Live Chess Arena</h2><p class="lead">Die letzte Arena-Partie zum Nachspielen: Zug für Zug, mit Bewertung und Zugliste.</p></div></header>
+      <div id="matchBody"></div>
+    </div>
+  </section>
+
+  <section class="sec alt" id="evolution">
+    <div class="wrap">
+      <header class="sh"><p class="num">02</p><div><h2>Engine Evolution</h2><p class="lead">Jede Generation muss sich gegen die Referenz beweisen. Nur akzeptierte Versionen zählen, Kandidaten bleiben Kandidaten.</p></div></header>
+      <div id="versBody"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="performance">
+    <div class="wrap">
+      <header class="sh"><p class="num">03</p><div><h2>Elo Performance</h2><p class="lead">Jeder Punkt ist eine echte Messung mit 95-%-Konfidenzintervall. Die Werte gelten je Gegner und Testbedingung und werden nicht zu einer Kurve verrechnet.</p></div></header>
+      <div id="perfBody"></div>
+    </div>
+  </section>
+
+  <section class="sec alt" id="partien">
+    <div class="wrap">
+      <header class="sh"><p class="num">04</p><div><h2>Game Explorer</h2><p class="lead">Partien durchsuchen, filtern, öffnen und als PGN herunterladen.</p></div></header>
+      <div id="gamesBody"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="road">
+    <div class="wrap">
+      <header class="sh"><p class="num">05</p><div><h2>Road to 4000</h2><p class="lead">Links das Gemessene, rechts die Vision. Beides wird nie vermischt.</p></div></header>
+      <div id="wegBody"></div>
+    </div>
+  </section>
+
+  <section class="sec alt" id="mission">
+    <div class="wrap">
+      <header class="sh"><p class="num">06</p><div><h2>The Mission</h2><p class="lead">Eine Schachengine, die sich selbst verbessert, und eine Seite, die jeden Schritt belegt.</p></div></header>
+      <div id="missionBody"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <img class="fmark" src="brand/logo-icon.svg" alt="" width="36" height="36">
+  <p id="banner" hidden></p>
+</footer>
+<div id="modal" class="modal" hidden></div>
+<noscript><p style="padding:20px">Diese Seite braucht JavaScript für die Live-Daten.</p></noscript>
+<script src="vendor/motion.js"></script>
+<script src="pawn-render.js?v=96"></script>
+<script src="pieces.js?v=96"></script>
+<script src="mobile.js?v=96"></script>
+<script src="premium.js?v=96"></script>
+</body>
+</html>
